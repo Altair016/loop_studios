@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --alata: "Alata";
+    --jose-sans: "Josefin+Sans";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#nav-bar {
+    background-color: pink;
+    display: flex;
+}
+
+#nav-hamburger {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-links {
+    display: flex;
+    column-gap: 10px;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+#hamburger {
+    display: none;
+}
