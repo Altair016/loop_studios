@@ -16,7 +16,7 @@
 }
 
 html {
-    font-family: var(--jose-sans);
+    font-family: var(--alata);
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
 }
@@ -27,6 +27,7 @@ html {
 }
 
 .heading-2 {
+    font-family: var(--jose-sans);
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 300;
@@ -56,6 +57,10 @@ html {
     align-items: center;
 }
 
+.align-items-end {
+    align-items: flex-end;
+}
+
 .flex-1 {
     flex: 1;
 }
@@ -66,18 +71,23 @@ html {
 
 #nav-bar-brand-cover {
     position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 #nav-bar-brand-cover-text {
+    padding: 25px;
     width: 100%;
     position: absolute;
+    font-family: var(--jose-sans);
     z-index: 1;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 23px;
     padding: 20px 0;
     margin: 20px 0;
-    border: 5px solid transparent;
+    /*border: 5px solid transparent; */
 }
 
 #nav-bar-brand-cover-text>* {
@@ -90,7 +100,7 @@ html {
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
-    padding: 10px 0;
+    padding: 14px 0;
 }
 
 #logo-container {
@@ -118,6 +128,7 @@ html {
 }
 
 .nav-link {
+    font-family: var(--alata);
     text-decoration: none;
     color: var(--white);
 }
@@ -139,12 +150,13 @@ html {
     text-transform: uppercase;
     border: solid transparent;
     border-width: 20px;
-    font-size: 4.4rem;
+    border-bottom-width: 7px;
+    font-size: 4.5rem;
     max-width: 650px;
     padding: 20px;
     outline: 2px solid white;
     font-weight: 300;
-    line-height: 4.32rem;
+    line-height: 4.35rem;
     letter-spacing: 1px;
     margin: 20px 0;
 }
@@ -154,9 +166,9 @@ html {
     filter: brightness(0.6);
 }
 
-.responsive-image {
-    width: 100%;
-    height: auto;
+#brand-cover-image>img {
+    object-position: center;
+    object-fit: cover;
 }
 
 #interactive-image-text-container {
@@ -180,7 +192,6 @@ html {
 }
 
 #interactive-text-description {
-    font-family: var(--alata);
     line-height: 1.555rem;
     color: var(--dark-gray);
     font-weight: 400;
@@ -206,15 +217,13 @@ html {
     padding: 9px 20.8px;
     border: solid transparent;
     border-width: 0 20px;
-    outline: 2px solid gray;
+    outline: 2px solid var(--dark-gray);
     text-transform: uppercase;
     text-decoration: none;
     color: initial;
-    font-family: var(--alata);
     font-size: .95em;
     letter-spacing: 4px;
 }
-
 
 #cards-body {
     padding: 20px 0;
@@ -223,9 +232,118 @@ html {
     gap: 30px;
 }
 
-/*
+.card {
+    position: relative;
+}
 
-.cards-parent-container,
-.cards-child-container {
-    display: flex;
-} */
+.card-image {
+    position: relative;
+    z-index: -1;
+}
+
+.card-footer {
+    position: absolute;
+    text-transform: uppercase;
+    font-family: var(--jose-sans);
+    font-size: 2rem;
+    font-weight: 300;
+    left: 16%;
+    bottom: 8%;
+    color: var(--white);
+}
+
+footer {
+    align-content: center;
+    background-color: black;
+    padding: 25px 0;
+}
+
+#footer-container {
+    width: 77vw;
+    margin: auto;
+    padding: 20px 0;
+}
+
+#footer-container>* {
+    row-gap: 22px;
+}
+
+#footer-logo>img {
+    width: 25%;
+}
+
+#footer-nav-links {
+    list-style-type: none;
+    column-gap: 34px;
+}
+
+.footer-nav-link {
+    text-decoration: none;
+    color: var(--white);
+}
+
+#footer-icons {
+    align-items: center;
+    column-gap: 16px;
+}
+
+#footer-copyright>p {
+    color: var(--very-dark-gray);
+}
+
+@media (max-width:768px) {
+    #nav {
+        display: none;
+    }
+
+    #hamburger {
+        display: initial;
+    }
+
+
+    #nav-bar-brand-cover-text>* {
+        width: 87vw;
+        margin: auto;
+    }
+}
+
+@media (max-width:600px) {
+
+    /* NavBar & Brand Cover */
+
+    #nav-bar {
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 0 0 20px 0;
+    }
+
+    #brand-cover-text {
+        margin: 25px auto;
+        padding: 25px 0;
+    }
+
+    #logo-container>img {
+        width: 90%;
+    }
+
+    #brand-cover-image>img {
+        content: url(images/mobile/image-hero.jpg);
+        width: 100%;
+        height: auto;
+    }
+
+    #nav-bar-brand-cover-text {
+        row-gap: 28px;
+    }
+
+    #brand-cover-text p {
+        font-size: 2.6em;
+        line-height: 1em;
+        color: var(--white);
+        text-transform: uppercase;
+        border: none;
+        max-width: 650px;
+        outline: 2px solid white;
+        font-weight: 300;
+    }
+}
